@@ -1,6 +1,6 @@
 # Neural Style Transfer
 
-The repository contains PyTorch implementation of the [Gatys *et al.*](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) paper with some modifications. The authors propose algorithm that transfers style from one input image (the *style* image) into second image (the *content* image).
+The repository contains PyTorch implementation of the [Gatys *et al.*](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) paper with some modifications. In the paper, the authors proposed algorithm that transfers **style** from one input image (the *style* image) into second image (the *content* image).
 
 ## Examples
 
@@ -39,7 +39,7 @@ Optional parameters:
 
 ## Acknowledgment
 
-Useful articles with code and code repositories:
+Helpful articles with code and code repositories while writing my implementation:
 
 - Gregor Koehler *et al.* [gkoehler/pytorch-neural-style-transfer](https://nextjournal.com/gkoehler/pytorch-neural-style-transfer) (best resource in my opinion)
 - Ritul's [Medium article](https://medium.com/udacity-pytorch-challengers/style-transfer-using-deep-nural-network-and-pytorch-3fae1c2dd73e) (good resource)
@@ -56,7 +56,7 @@ Sample *content* images:
 |:--:|
 | "Gray Bridge and Trees", Martin Damboldt |
 
-Style images:
+Style images to play with:
 
 | ![The Persistence of Memory](./styles/persistance-of-memory.jpg) | ![Colorful whirlpool](./styles/colorful-whirlpool.jpg) | ![Mondrian World Map](./styles/mondrian.png) |
 |:--:|:--:|:--:|
