@@ -1,0 +1,14 @@
+name: style-transfer
+
+channels:
+    - pytorch
+    - defaults
+    - conda-forge
+
+dependencies:
+    - python=3.9
+    - cudatoolkit=11.3
+    - pytorch=1.10
+    - torchvision
+    - tqdm
+    - Pillow
