@@ -52,133 +52,36 @@ Useful articles with code and code repositories:
 
 Sample *content* images:
 
-<div style="display:flex;flex-flow:row wrap;align-items:flex-end;text-align:center;">
-
-<figure>
-    <img src="./samples/bridge.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"Gray Bridge and Trees", Martin Damboldt</figcaption>
-</figure>
-
-</div>
-
+| ![Gray Bridge and Trees](./samples/bridge.jpg) |
+|:--:|
+| "Gray Bridge and Trees", Martin Damboldt |
 
 Style images:
 
-<div style="display:flex;flex-flow:row wrap;align-items:flex-end;text-align:center;">
-<figure>
-    <img src="./styles/bamboo-forest.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>Bamboo forest, ???</figcaption>
-</figure>
+| ![The Persistence of Memory](./styles/persistance-of-memory.jpg) | ![Colorful whirlpool](./styles/colorful-whirlpool.jpg) | ![Mondrian World Map](./styles/mondrian.png) |
+|:--:|:--:|:--:|
+| "The Persistence of Memory", Salvador Dali | Colorful whirlpool, ??? | "Mondrian World Map", Michael Tompsett |
 
-<figure>
-    <img src="./styles/candy.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"June tree", Natasha (Wescoat) Bouchillion</figcaption>
-</figure>
+| ![Fractal Patterns](./styles/fractal-pattern.jpg) | ![The Scream](./styles/the-scream.jpg) | ![Udnie](./styles/udnie.jpg) |
+|:--:|:--:|:--:|
+| Fractal Patterns, ??? | "The Scream", Edvard Munch | "Udnie", Francis Picabia |
 
-<figure>
-    <img src="./styles/colorful-whirlpool.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>Colorful whirlpool, ???</figcaption>
-</figure>
+| ![Hand with Reflecting Sphere](./styles/escher-sphere.jpg) | ![Bamboo forest](./styles/bamboo-forest.jpg) | ![Mysterious Rain Princess](./styles/rain-princess.jpg) |
+|:--:|:--:|:--:|
+| "Hand with Reflecting Sphere", M. C. Escher | Bamboo forest, ??? | "Mysterious Rain Princess", Leonid Afremov |
 
-<figure>
-    <img src="./styles/composition-vii.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"Composition VII", Wassily Kandinsky</figcaption>
-</figure>
+| ![June tree](./styles/candy.jpg) | ![La Muse](./styles/la-muse.jpg) | ![Lady](./styles/lady.jpg) |
+|:--:|:--:|:--:|
+| "June tree", Natasha (Wescoat) Bouchillion | "La Muse", Pablo Picasso | "Lady", ??? |
 
-<figure>
-    <img src="./styles/doomguy.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"Doomguy", ID Software</figcaption>
-</figure>
+| ![Composition VII](./styles/composition-vii.jpg) | ![Walking in the Rain](./styles/walking-in-the-rain.jpg) | ![The Starry Night](./styles/starry-night.jpg) |
+|:--:|:--:|:--:|
+| "Composition VII", Wassily Kandinsky | "Walking in the Rain", Leonid Afremov | "The Starry Night", Vincent van Gogh |
 
-<figure>
-    <img src="./styles/edtaonisl.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"Edtaonisl", Francis Picabia</figcaption>
-</figure>
+| ![Edtaonisl](./styles/edtaonisl.jpg) | ![Seated Nude](./styles/seated-nude.jpg) | ![The Night Café](./styles/night-cafe.jpg) |
+|:--:|:--:|:--:|
+| "Edtaonisl", Francis Picabia | "Seated Nude", Pablo Picasso | "The Night Café", Vincent van Gogh |
 
-<figure>
-    <img src="./styles/escher-sphere.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"Hand with Reflecting Sphere", M. C. Escher</figcaption>
-</figure>
-
-<figure>
-    <img src="./styles/feathers.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>Feather leaves and petals, Kathryn Corlett</figcaption>
-</figure>
-
-<figure>
-    <img src="./styles/flowers.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>Flowers, ???</figcaption>
-</figure>
-
-<figure>
-    <img src="./styles/fractal-pattern.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>Fractal Patterns, ???</figcaption>
-</figure>
-
-<figure>
-    <img src="./styles/la-muse.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"La Muse", Pablo Picasso</figcaption>
-</figure>
-
-<figure>
-    <img src="./styles/lady.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"Lady", ???</figcaption>
-</figure>
-
-<figure>
-    <img src="./styles/mondrian.png" style="max-height:270px; max-width:270px;">
-    <figcaption>"Mondrian World Map", Michael Tompsett</figcaption>
-</figure>
-
-<figure>
-    <img src="./styles/night-cafe.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"The Night Café", Vincent van Gogh</figcaption>
-</figure>
-
-<figure>
-    <img src="./styles/paul-of-tarsus.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"Saul of Tarsus", Marko Ivan Rupnik</figcaption>
-</figure>
-
-<figure>
-    <img src="./styles/persistance-of-memory.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"The Persistence of Memory", Salvador Dali</figcaption>
-</figure>
-
-
-<figure>
-    <img src="./styles/rain-princess.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"Mysterious Rain Princess", Leonid Afremov</figcaption>
-</figure>
-
-<figure>
-    <img src="./styles/seated-nude.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"Seated Nude", Pablo Picasso</figcaption>
-</figure>
-
-<figure>
-    <img src="./styles/starry-night.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"The Starry Night", Vincent van Gogh</figcaption>
-</figure>
-
-<figure>
-    <img src="./styles/the-scream.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"The Scream", Edvard Munch</figcaption>
-</figure>
-
-<figure>
-    <img src="./styles/udnie.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"Udnie", Francis Picabia</figcaption>
-</figure>
-
-<figure>
-    <img src="./styles/walking-in-the-rain.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"Walking in the Rain", Leonid Afremov</figcaption>
-</figure>
-
-<figure>
-    <img src="./styles/wave.jpg" style="max-height:270px; max-width:270px;">
-    <figcaption>"Under the Wave off Kanagawa", Katsushika Hokusai</figcaption>
-</figure>
-
-</div>
+| ![Under the Wave off Kanagawa](./styles/wave.jpg) | ![Flowers](./styles/flowers.jpg) | ![Doomguy](./styles/doomguy.jpg) |
+|:--:|:--:|:--:|
+| "Under the Wave off Kanagawa", Katsushika Hokusai | Flowers, ??? | "Doomguy", ID Software |
