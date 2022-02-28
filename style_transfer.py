@@ -30,9 +30,9 @@ STYLE_LAYERS_DEFAULT = {
 
 CONTENT_LAYERS_DEFAULT = ('conv5_2', )
 
-CONTENT_WEIGHT = 1e-2  # "alpha" in the literature (was 8)
-STYLE_WEIGHT = 1e4  # "beta" in the literature (was 70)
-TV_WEIGHT = 30 # (was 10)
+CONTENT_WEIGHT = 8  # "alpha" in the literature (default: 8)
+STYLE_WEIGHT = 70  # "beta" in the literature (default: 70)
+TV_WEIGHT = 10 # (default: 10)
 
 IMG_SIZE = 512
 LEARNING_RATE = 0.004
@@ -104,13 +104,14 @@ def gram_matrix(input: Tensor, normalize=False) -> Tensor:
 
 
 transform = T.Compose([
+    # Smaller edge of the image will be matched to `IMG_SIZE`
     T.Resize(IMG_SIZE),
     T.ToTensor(),
     T.Normalize(IMAGENET_MEAN, IMAGENET_STD),
 ])
 
 inv_transform = T.Compose([
-    NormalizeInverse(IMAGENET_MEAN, IMAGENET_STD)
+    NormalizeInverse(IMAGENET_MEAN, IMAGENET_STD),
 ])
 
 inv_transform_preview = T.Compose([
@@ -170,6 +171,9 @@ if __name__ == '__main__':
     parser.add_argument('--no-cuda', action='store_true', default=False, help='disable CUDA acceleration')
     parser.add_argument('--optimizer', choices=['adam', 'adamw', 'lbfgs', 'sgd'], default='adam', help='select optimizer (default: adam)')
     parser.add_argument('--init', choices=['input', 'noise'], default='input', help='select start image (default: input)')
+    #parser.add_argument('--output', '-o', help='image output')
+    #parser.add_argument('--animation', action='store_true', default=False, help='intermediate images into animated GIF')
+    #parser.add_argument('--no-normalization', action='save_true', default=False, help='disable intermediate image color normalization')
 
     args = parser.parse_args()
     args.cuda = not args.no_cuda and torch.cuda.is_available()
@@ -240,9 +244,6 @@ if __name__ == '__main__':
             if total_loss.requires_grad:
                 total_loss.backward()
 
-            with torch.no_grad():
-                torch.clamp(target, 0, 1)
-
             return total_loss
 
         optimizer.step(closure)
@@ -258,34 +259,32 @@ if __name__ == '__main__':
             raise Exception(f'Use of optimizer "{args.optimizer}" not implemented!')
 
 
-        pbar = tqdm(range(args.epochs), unit='batches')
+        pbar = tqdm(range(args.epochs))
 
         for _ in pbar:
             optimizer.zero_grad(set_to_none=True)
 
             target_features = get_features(target, model)
 
-            content_loss = content_loss_func(target_features, content_features)
-            style_loss = style_loss_func(target_features, style_features, style_grams)
-            tv_loss = total_variance_loss_func(target)
+            content_loss = CONTENT_WEIGHT * content_loss_func(target_features, content_features)
+            style_loss = STYLE_WEIGHT * style_loss_func(target_features, style_features, style_grams)
+            tv_loss = TV_WEIGHT * total_variance_loss_func(target)
 
-            total_loss = \
-                CONTENT_WEIGHT * content_loss + \
-                STYLE_WEIGHT * style_loss + \
-                TV_WEIGHT * tv_loss
+            total_loss = content_loss + style_loss + tv_loss
 
-            total_loss.backward() # do we need `retain_graph=True`?
+            total_loss.backward(retain_graph=True) # do we need `retain_graph=True`?
             optimizer.step()
 
             pbar.set_postfix_str(
                 f'total_loss={total_loss.item():.2f} '
-                f'content_loss={content_loss.item() * CONTENT_WEIGHT:.2f} '
-                f'style_loss={style_loss.item() * STYLE_WEIGHT:.2f} '
-                f'tv_loss={tv_loss.item() * TV_WEIGHT:.2f} '
+                f'content_loss={content_loss.item():.2f} '
+                f'style_loss={style_loss.item():.2f} '
+                f'tv_loss={tv_loss.item():.2f} '
             )
 
-            with torch.no_grad():
-                torch.clamp(target, 0, 1)
+
+        #with torch.no_grad():
+        #    target = torch.clamp(target, 0.0, 1.0)
 
 
     timestamp = dt.now().strftime('%Y%m%dT%H%M%S')
