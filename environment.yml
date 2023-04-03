@@ -2,13 +2,14 @@ name: style-transfer
 
 channels:
     - pytorch
-    - defaults
+    - nvidia
+    - anaconda
     - conda-forge
 
 dependencies:
     - python=3.9
-    - cudatoolkit=11.3
-    - pytorch=1.10
+    - pytorch-cuda=11.7
+    - pytorch=2.0
     - torchvision
     - tqdm
     - Pillow

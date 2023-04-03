@@ -188,7 +188,7 @@ if __name__ == '__main__':
 
     # We will use frozen pretrained VGG neural network for feature extraction
     # In the original paper, authors have used VGG19 (without bn)
-    model = models.vgg19(pretrained=True).features
+    model = models.vgg19(weights=models.VGG19_Weights.IMAGENET1K_V1).features
 
     # Authors in the original paper suggested use of AvgPool instead of MaxPool for more pleasing results.
     # However changing the pooling also affects activation, so the input needs to be scaled (not implemented).
@@ -222,7 +222,7 @@ if __name__ == '__main__':
     }
 
 
-    if args.optimizer == 'lbfgs':
+    if args.optimizer.lower() == 'lbfgs':
         # LBFGS optimizer has a bit different API from others where it uses closure()
         optimizer = optim.LBFGS([target], max_iter=args.epochs, line_search_fn='strong_wolfe')
 
@@ -249,11 +249,11 @@ if __name__ == '__main__':
         optimizer.step(closure)
 
     else:
-        if args.optimizer == 'adam':
+        if args.optimizer.lower() == 'adam':
             optimizer = optim.Adam([target], lr=LEARNING_RATE)
-        elif args.optimizer == 'sgd':
+        elif args.optimizer.lower() == 'sgd':
             optimizer = optim.SGD([target], lr=LEARNING_RATE)
-        elif args.optimizer == 'adamw':
+        elif args.optimizer.lower() == 'adamw':
             optimizer = optim.AdamW([target], lr=LEARNING_RATE)
         else:
             raise Exception(f'Use of optimizer "{args.optimizer}" not implemented!')
