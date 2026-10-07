@@ -1,5 +1,10 @@
 # Neural Style Transfer
 
+> [!NOTE]
+> **This project is no longer under active development.**
+> It is kept here as a portfolio and reference project.
+> A more up-to-date version is available on my [blog](https://gcerar.github.io/posts/2023-09-15-neural-style-transfer/).
+
 The repository contains PyTorch implementation of the [Gatys *et al.*](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) paper with some modifications. In the paper, the authors proposed algorithm that transfers **style** from one input image (the *style* image) into second image (the *content* image).
 
 ## Examples
